@@ -1,4 +1,3 @@
-
 #!/bin/sh
 
 echo "Inside custom converter code"
