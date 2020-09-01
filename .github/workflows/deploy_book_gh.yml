@@ -30,6 +30,11 @@ jobs:
         pip install -r book/requirements.txt
 
     # Convert org files to rst
+
+    - name: Setup right permissions
+      run: |
+        sudo chmod -R 777 .
+
     - name: convert org files
       uses: docker://rahuketu86/fastpages-emacs
       if: github.event.deleted == false
