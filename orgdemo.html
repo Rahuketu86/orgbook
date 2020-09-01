@@ -1,0 +1,933 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ox-Rst &#8212; Org book</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Content with notebooks" href="notebooks.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Org book</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Welcome to Org Book
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="content.html">
+   Content in Jupyter Book
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="markdown.html">
+     Markdown Files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks.html">
+     Content with notebooks
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Ox-Rst
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#configuration">
+     Configuration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#restructuredtext-export">
+     reStructuredText export
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/orgdemo.rst"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/rahuketu86/orgbook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="ox-rst">
+<h1>Ox-Rst<a class="headerlink" href="#ox-rst" title="Permalink to this headline">¶</a></h1>
+<p><strong>Ox-Rst</strong> exports your <a class="reference external" href="http://orgmode.org">Org</a> documents to reStructuredText.
+Ox-Rst relies on the Org-mode 9.0 export framework.</p>
+</div>
+<div class="section" id="configuration">
+<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
+<p>Add the following in your init.el</p>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;ox-rst</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="restructuredtext-export">
+<h1>reStructuredText export<a class="headerlink" href="#restructuredtext-export" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">ox-rst</span></code> export back-end generates reStructuredText syntax for
+an Org mode buffer.</p>
+<div class="section" id="restructuredtext-commands">
+<h2>reStructuredText commands<a class="headerlink" href="#restructuredtext-commands" title="Permalink to this headline">¶</a></h2>
+<p>To export your org document to, press <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-e</span></code>, and then <code class="docutils literal notranslate"><span class="pre">r</span></code>.</p>
+<div class="section" id="c-c-c-e-r-r-org-rst-export-to-rst">
+<h3><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-e</span> <span class="pre">r</span> <span class="pre">r</span> <span class="pre">(org-rst-export-to-rst)</span></code><a class="headerlink" href="#c-c-c-e-r-r-org-rst-export-to-rst" title="Permalink to this headline">¶</a></h3>
+<p>Export as a text file written in reStructured syntax.
+For an Org file, <code class="docutils literal notranslate"><span class="pre">myfile.org</span></code>, the resulting file will be <code class="docutils literal notranslate"><span class="pre">myfile.rst</span></code>.
+The file will be overwritten without warning.</p>
+</div>
+<div class="section" id="c-c-c-e-r-r-org-rst-export-as-rst">
+<h3><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-e</span> <span class="pre">r</span> <span class="pre">R</span> <span class="pre">(org-rst-export-as-rst)</span></code><a class="headerlink" href="#c-c-c-e-r-r-org-rst-export-as-rst" title="Permalink to this headline">¶</a></h3>
+<p>Export as a temporary buffer. Do not create a file.</p>
+</div>
+</div>
+<div class="section" id="title-author-e-mail-and-date">
+<h2>Title, Author, E-Mail and Date<a class="headerlink" href="#title-author-e-mail-and-date" title="Permalink to this headline">¶</a></h2>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+TITLE: This is the title of the document</span>
+<span class="c1">#+AUTHOR: Author</span>
+<span class="c1">#+EMAIL: mailaddress@example.com</span>
+<span class="c1">#+DATE: 2019/08/13 00:00</span>
+<span class="c1">#+OPTIONS: author:t date:t email:t</span>
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">=================================</span>
+<span class="gh">This is the title of the document</span>
+<span class="gh">=================================</span>
+
+    <span class="nc">:Author:</span> Author
+    <span class="nc">:Contact:</span> mailaddress@example.com
+    <span class="nc">:Date:</span> 2019/08/13 00:00
+</pre></div>
+</div>
+</div>
+<div class="section" id="headings">
+<h2>Headings<a class="headerlink" href="#headings" title="Permalink to this headline">¶</a></h2>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">Heading</span> <span class="mi">1</span>
+
+<span class="n">contents</span> <span class="mi">1</span>
+
+<span class="o">**</span> <span class="n">Heading</span> <span class="mi">1</span><span class="o">-</span><span class="mi">1</span>
+
+<span class="n">contents</span> <span class="mi">1</span><span class="o">-</span><span class="mi">1</span>
+
+<span class="o">***</span> <span class="n">Heading</span> <span class="mi">1</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">3</span>
+
+<span class="n">contents</span> <span class="mi">1</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">3</span>
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Heading 1</span>
+<span class="gh">---------</span>
+
+contents 1
+
+<span class="gh">Heading 1-1</span>
+<span class="gh">~~~~~~~~~~~</span>
+
+contents 1-1
+
+<span class="gh">Heading 1-1-3</span>
+<span class="gh">^^^^^^^^^^^^^</span>
+
+contents 1-1-3
+</pre></div>
+</div>
+</div>
+<div class="section" id="table-of-contents">
+<h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+OPTIONS: toc:t</span>
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">contents</span><span class="p">::</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="lists">
+<h2>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h2>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">**</span> <span class="n">Lord</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Rings</span>
+<span class="mf">1.</span> <span class="n">The</span> <span class="n">attack</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Rohirrim</span>
+<span class="mf">2.</span> <span class="n">Eowyn</span><span class="s1">&#39;s fight with the witch king</span>
+   <span class="o">+</span> <span class="n">this</span> <span class="n">was</span> <span class="n">already</span> <span class="n">my</span> <span class="n">favorite</span> <span class="n">scene</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">book</span>
+   <span class="o">+</span> <span class="n">I</span> <span class="n">really</span> <span class="n">like</span> <span class="n">Miranda</span> <span class="n">Otto</span><span class="o">.</span>
+<span class="mf">3.</span> <span class="n">Peter</span> <span class="n">Jackson</span> <span class="n">being</span> <span class="n">shot</span> <span class="n">by</span> <span class="n">Legolas</span>
+   <span class="o">-</span> <span class="n">on</span> <span class="n">DVD</span> <span class="n">only</span>
+   <span class="n">He</span> <span class="n">makes</span> <span class="n">a</span> <span class="n">really</span> <span class="n">funny</span> <span class="n">face</span> <span class="n">when</span> <span class="n">it</span> <span class="n">happens</span><span class="o">.</span>
+<span class="n">But</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">end</span><span class="p">,</span> <span class="n">no</span> <span class="n">individual</span> <span class="n">scenes</span> <span class="n">matter</span> <span class="n">but</span> <span class="n">the</span> <span class="n">film</span> <span class="k">as</span> <span class="n">a</span> <span class="n">whole</span><span class="o">.</span>
+<span class="n">Important</span> <span class="n">actors</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">film</span> <span class="n">are</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Elijah</span> <span class="n">Wood</span> <span class="p">::</span> <span class="n">He</span> <span class="n">plays</span> <span class="n">Frodo</span>
+<span class="o">-</span> <span class="n">Sean</span> <span class="n">Austin</span> <span class="p">::</span> <span class="n">He</span> <span class="n">plays</span> <span class="n">Sam</span><span class="p">,</span> <span class="n">Frodo</span><span class="s1">&#39;s friend.  I still remember</span>
+  <span class="n">him</span> <span class="n">very</span> <span class="n">well</span> <span class="kn">from</span> <span class="nn">his</span> <span class="n">role</span> <span class="k">as</span> <span class="n">Mikey</span> <span class="n">Walsh</span> <span class="ow">in</span> <span class="n">The</span> <span class="n">Goonies</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Lord of the Rings</span>
+<span class="gh">~~~~~~~~~~~~~~~~~</span>
+
+<span class="m">1.</span> The attack of the Rohirrim
+
+<span class="m">2.</span> Eowyn&#39;s fight with the witch king
+
+   <span class="m">-</span> this was already my favorite scene in the book
+
+   <span class="m">-</span> I really like Miranda Otto.
+
+<span class="m">3.</span> Peter Jackson being shot by Legolas
+
+   <span class="m">-</span> on DVD only
+
+   He makes a really funny face when it happens.
+
+But in the end, no individual scenes matter but the film as a whole.
+Important actors in this film are:
+
+Elijah Wood
+    He plays Frodo
+
+Sean Austin
+    He plays Sam, Frodo&#39;s friend.  I still remember
+    him very well from his role as Mikey Walsh in The Goonies.
+</pre></div>
+</div>
+</div>
+<div class="section" id="special-characters">
+<h2>Special Characters<a class="headerlink" href="#special-characters" title="Permalink to this headline">¶</a></h2>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">special</span> <span class="n">characters</span> <span class="o">*</span> <span class="n">asterisk</span> \ <span class="n">backspace</span>
+<span class="o">..</span> <span class="n">reStructuredText</span> <span class="n">comment</span> <span class="n">line</span>
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>special characters \* asterisk \\ backspace
+\.. reStructuredText comment line
+</pre></div>
+</div>
+</div>
+<div class="section" id="paragraphs">
+<h2>Paragraphs<a class="headerlink" href="#paragraphs" title="Permalink to this headline">¶</a></h2>
+<p><strong>note</strong> Org line breaks <code class="docutils literal notranslate"><span class="pre">\\</span></code> will be ignored.</p>
+<div class="section" id="verse-block">
+<h3>Verse block<a class="headerlink" href="#verse-block" title="Permalink to this headline">¶</a></h3>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+BEGIN_VERSE</span>
+ <span class="n">Great</span> <span class="n">clouds</span> <span class="n">overhead</span>
+      <span class="n">Tiny</span> <span class="n">black</span> <span class="n">birds</span> <span class="n">rise</span> <span class="ow">and</span> <span class="n">fall</span>
+      <span class="n">Snow</span> <span class="n">covers</span> <span class="n">Emacs</span>
+
+          <span class="o">--</span> <span class="n">AlexSchroeder</span>
+<span class="c1">#+END_VERSE</span>
+</pre></div>
+</div>
+<p>reStructuredText Line Blocks:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="o">|</span> Great clouds overhead
+<span class="o">|</span>      Tiny black birds rise and fall
+<span class="o">|</span>      Snow covers Emacs
+|
+<span class="o">|</span>          -- AlexSchroeder
+</pre></div>
+</div>
+</div>
+<div class="section" id="quote-block">
+<h3>Quote block<a class="headerlink" href="#quote-block" title="Permalink to this headline">¶</a></h3>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+BEGIN_QUOTE</span>
+<span class="n">Everything</span> <span class="n">should</span> <span class="n">be</span> <span class="n">made</span> <span class="k">as</span> <span class="n">simple</span> <span class="k">as</span> <span class="n">possible</span><span class="p">,</span>
+  <span class="n">but</span> <span class="ow">not</span> <span class="nb">any</span> <span class="n">simpler</span> <span class="o">--</span> <span class="n">Albert</span> <span class="n">Einstein</span>
+<span class="c1">#+END_QUOTE</span>
+</pre></div>
+</div>
+<p>reStructuredText Literal Blocks:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="se">::</span>
+
+<span class="s">    Everything should be made as simple as possible,</span>
+<span class="s">      but not any simpler -- Albert Einstein</span>
+</pre></div>
+</div>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+ATTR_RST: :margin 4</span>
+<span class="c1">#+BEGIN_QUOTE</span>
+<span class="n">Everything</span> <span class="n">should</span> <span class="n">be</span> <span class="n">made</span> <span class="k">as</span> <span class="n">simple</span> <span class="k">as</span> <span class="n">possible</span><span class="p">,</span>
+<span class="n">but</span> <span class="ow">not</span> <span class="nb">any</span> <span class="n">simpler</span> <span class="o">--</span> <span class="n">Albert</span> <span class="n">Einstein</span>
+<span class="c1">#+END_QUOTE</span>
+
+<span class="c1">#+ATTR_RST: :margin 8</span>
+<span class="c1">#+BEGIN_QUOTE</span>
+<span class="n">Everything</span> <span class="n">should</span> <span class="n">be</span> <span class="n">made</span> <span class="k">as</span> <span class="n">simple</span> <span class="k">as</span> <span class="n">possible</span><span class="p">,</span>
+<span class="n">but</span> <span class="ow">not</span> <span class="nb">any</span> <span class="n">simpler</span> <span class="o">--</span> <span class="n">Albert</span> <span class="n">Einstein</span>
+<span class="c1">#+END_QUOTE</span>
+</pre></div>
+</div>
+<p>reStructuredText Block Quotes:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>Everything should be made as simple as possible,
+but not any simpler -- Albert Einstein
+
+    Everything should be made as simple as possible,
+    but not any simpler -- Albert Einstein
+</pre></div>
+</div>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+ATTR_RST: :directive note</span>
+<span class="c1">#+BEGIN_QUOTE</span>
+<span class="n">Everything</span> <span class="n">should</span> <span class="n">be</span> <span class="n">made</span> <span class="k">as</span> <span class="n">simple</span> <span class="k">as</span> <span class="n">possible</span><span class="p">,</span>
+<span class="n">but</span> <span class="ow">not</span> <span class="nb">any</span> <span class="n">simpler</span> <span class="o">--</span> <span class="n">Albert</span> <span class="n">Einstein</span>
+<span class="c1">#+END_QUOTE</span>
+</pre></div>
+</div>
+<p>reStructuredText Directives:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">note</span><span class="p">::</span>
+
+    Everything should be made as simple as possible,
+    but not any simpler -- Albert Einstein
+</pre></div>
+</div>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+ATTR_RST: :directive sidebar :title sidebar title</span>
+<span class="c1">#+BEGIN_QUOTE</span>
+<span class="n">Everything</span> <span class="n">should</span> <span class="n">be</span> <span class="n">made</span> <span class="k">as</span> <span class="n">simple</span> <span class="k">as</span> <span class="n">possible</span><span class="p">,</span>
+<span class="n">but</span> <span class="ow">not</span> <span class="nb">any</span> <span class="n">simpler</span> <span class="o">--</span> <span class="n">Albert</span> <span class="n">Einstein</span>
+<span class="c1">#+END_QUOTE</span>
+</pre></div>
+</div>
+<p>reStructuredText Directives with title:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">sidebar</span><span class="p">::</span> sidebar title
+
+    Everything should be made as simple as possible,
+    but not any simpler -- Albert Einstein
+</pre></div>
+</div>
+</div>
+<div class="section" id="special-blocks">
+<h3>Special blocks<a class="headerlink" href="#special-blocks" title="Permalink to this headline">¶</a></h3>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+BEGIN_caution</span>
+<span class="n">This</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">second</span> <span class="n">line</span> <span class="n">of</span> <span class="n">the</span> <span class="n">first</span> <span class="n">paragraph</span><span class="o">.</span>
+<span class="c1">#+END_caution</span>
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">caution</span><span class="p">::</span>
+
+    This is the second line of the first paragraph.
+</pre></div>
+</div>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+ATTR_RST: :title This is a note admonition.</span>
+<span class="c1">#+BEGIN_note</span>
+<span class="n">This</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">second</span> <span class="n">line</span> <span class="n">of</span> <span class="n">the</span> <span class="n">first</span> <span class="n">paragraph</span><span class="o">.</span>
+<span class="c1">#+END_note</span>
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">note</span><span class="p">::</span> This is a note admonition.
+
+    This is the second line of the first paragraph.
+</pre></div>
+</div>
+</div>
+<div class="section" id="center-block">
+<h3>Center block<a class="headerlink" href="#center-block" title="Permalink to this headline">¶</a></h3>
+<p>Center block will not affect.</p>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+BEGIN_CENTER</span>
+<span class="n">center</span> <span class="n">block</span>
+<span class="c1">#+END_CENTER</span>
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>center block
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="literal-examples">
+<h2>Literal examples<a class="headerlink" href="#literal-examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-block">
+<h3>example block<a class="headerlink" href="#example-block" title="Permalink to this headline">¶</a></h3>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+NAME: label</span>
+<span class="c1">#+BEGIN_EXAMPLE</span>
+<span class="n">example</span>
+<span class="c1">#+END EXAMPLE</span>
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>::
+    <span class="nc">:name:</span> label
+
+    example
+</pre></div>
+</div>
+</div>
+<div class="section" id="src-block">
+<h3>src block<a class="headerlink" href="#src-block" title="Permalink to this headline">¶</a></h3>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+BEGIN_SRC lisp</span>
+<span class="p">(</span><span class="n">require</span> <span class="s1">&#39;ox-rst)</span>
+<span class="c1">#+END_SRC</span>
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> lisp
+
+    (require &#39;ox-rst)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="emphasis-and-monospace">
+<h2>Emphasis and monospace<a class="headerlink" href="#emphasis-and-monospace" title="Permalink to this headline">¶</a></h2>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span><span class="n">bold</span><span class="o">*</span> <span class="o">/</span><span class="n">italic</span><span class="o">/</span> <span class="n">_underlined_</span> <span class="o">=</span><span class="n">verbatim</span><span class="o">=</span> <span class="o">~</span><span class="n">code</span><span class="o">~</span> <span class="o">+</span><span class="n">strike</span><span class="o">-</span><span class="n">through</span><span class="o">+</span>
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gs">**bold**</span> <span class="ge">*italic*</span> underlined <span class="s">``verbatim``</span> <span class="s">``code``</span> strike-through
+</pre></div>
+</div>
+</div>
+<div class="section" id="subscript-and-superscript">
+<h2>Subscript and superscript<a class="headerlink" href="#subscript-and-superscript" title="Permalink to this headline">¶</a></h2>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">H_</span><span class="p">{</span><span class="mi">2</span><span class="p">}</span><span class="n">O</span>
+<span class="n">E</span> <span class="o">=</span> <span class="n">mc</span><span class="o">^</span><span class="mi">2</span>
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>H\ <span class="na">:sub:</span><span class="nv">`2`</span>\ O
+E = mc\ <span class="na">:sup:</span><span class="nv">`2`</span>\
+</pre></div>
+</div>
+</div>
+<div class="section" id="latex-fragments">
+<h2>LaTeX fragments<a class="headerlink" href="#latex-fragments" title="Permalink to this headline">¶</a></h2>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>If $a^2=b$ and \( b=2 \), then the solution must be
+either $$ a=+\sqrt{2} $$ or \[ a=-\sqrt{2} \].
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>  If <span class="na">:math:</span><span class="nv">`a^2=b`</span> and <span class="na">:math:</span><span class="nv">`b=2`</span>, then the solution must be
+either
+
+<span class="p">..</span> <span class="ow">math</span><span class="p">::</span>
+
+    a=+\sqrt{2}
+
+ or
+
+<span class="p">..</span> <span class="ow">math</span><span class="p">::</span>
+
+    a=-\sqrt{2}
+
+.
+</pre></div>
+</div>
+</div>
+<div class="section" id="horizontal-rules">
+<h2>Horizontal rules<a class="headerlink" href="#horizontal-rules" title="Permalink to this headline">¶</a></h2>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-----</span>
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>------------
+</pre></div>
+</div>
+</div>
+<div class="section" id="comment-block">
+<h2>Comment block<a class="headerlink" href="#comment-block" title="Permalink to this headline">¶</a></h2>
+<p>Comment block will disapper.</p>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+BEGIN_COMMENT</span>
+<span class="n">comment</span>
+<span class="c1">#+END_COMMENT</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="images-and-tables">
+<h2>Images and Tables<a class="headerlink" href="#images-and-tables" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="images">
+<h3>Images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h3>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+ATTR_RST: :alt alternate text :align right</span>
+<span class="p">[[</span><span class="o">./</span><span class="n">image</span><span class="o">.</span><span class="n">jpg</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">image</span><span class="p">::</span> ./image.jpg
+    <span class="nc">:alt:</span> alternate text
+    <span class="nc">:align:</span> right
+</pre></div>
+</div>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+CAPTION: image caption</span>
+<span class="c1">#+ATTR_RST: :alt alternate text :align center :scale 50%</span>
+<span class="p">[[</span><span class="o">./</span><span class="n">image</span><span class="o">.</span><span class="n">jpg</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">figure</span><span class="p">::</span> ./image.jpg
+    <span class="nc">:alt:</span> alternate text
+    <span class="nc">:align:</span> center
+    <span class="nc">:scale:</span> 50%
+
+    image caption
+</pre></div>
+</div>
+</div>
+<div class="section" id="tables">
+<h3>Tables<a class="headerlink" href="#tables" title="Permalink to this headline">¶</a></h3>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span> <span class="n">TOP1</span> <span class="o">|</span> <span class="n">TOP2</span> <span class="o">|</span> <span class="n">TOP3</span> <span class="o">|</span>
+<span class="o">|</span> <span class="mi">1</span>    <span class="o">|</span> <span class="mi">2</span>    <span class="o">|</span> <span class="mi">3</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="n">AAAA</span> <span class="o">|</span> <span class="n">BBBB</span> <span class="o">|</span> <span class="n">CCCC</span> <span class="o">|</span>
+<span class="o">|</span> <span class="n">END1</span> <span class="o">|</span> <span class="n">END2</span> <span class="o">|</span> <span class="n">END3</span> <span class="o">|</span>
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">table</span><span class="p">::</span>
+
+    +------+------+------+
+    <span class="o">|</span> TOP1 | TOP2 | TOP3 |
+    +------+------+------+
+    <span class="o">|</span> 1    | 2    | 3    |
+    +------+------+------+
+    <span class="o">|</span> AAAA | BBBB | CCCC |
+    +------+------+------+
+    <span class="o">|</span> END1 | END2 | END3 |
+    +------+------+------+
+</pre></div>
+</div>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span> <span class="n">TOP1</span> <span class="o">|</span> <span class="n">TOP2</span> <span class="o">|</span> <span class="n">TOP3</span> <span class="o">|</span>
+<span class="o">|------+------+------|</span>
+<span class="o">|</span> <span class="mi">1</span>    <span class="o">|</span> <span class="mi">2</span>    <span class="o">|</span> <span class="mi">3</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="n">AAAA</span> <span class="o">|</span> <span class="n">BBBB</span> <span class="o">|</span> <span class="n">CCCC</span> <span class="o">|</span>
+<span class="o">|</span> <span class="n">END1</span> <span class="o">|</span> <span class="n">END2</span> <span class="o">|</span> <span class="n">END3</span> <span class="o">|</span>
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">table</span><span class="p">::</span>
+
+    +------+------+------+
+    <span class="o">|</span> TOP1 | TOP2 | TOP3 |
+    +======+======+======+
+    <span class="o">|</span> 1    | 2    | 3    |
+    +------+------+------+
+    <span class="o">|</span> AAAA | BBBB | CCCC |
+    +------+------+------+
+    <span class="o">|</span> END1 | END2 | END3 |
+    +------+------+------+
+</pre></div>
+</div>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|------+------+------|</span>
+<span class="o">|</span> <span class="n">TOP1</span> <span class="o">|</span> <span class="n">TOP2</span> <span class="o">|</span> <span class="n">TOP3</span> <span class="o">|</span>
+<span class="o">|------+------+------|</span>
+<span class="o">|</span> <span class="mi">1</span>    <span class="o">|</span> <span class="mi">2</span>    <span class="o">|</span> <span class="mi">3</span>    <span class="o">|</span>
+<span class="o">|------+------+------|</span>
+<span class="o">|</span> <span class="n">AAAA</span> <span class="o">|</span> <span class="n">BBBB</span> <span class="o">|</span> <span class="n">CCCC</span> <span class="o">|</span>
+<span class="o">|------+------+------|</span>
+<span class="o">|</span> <span class="n">END1</span> <span class="o">|</span> <span class="n">END2</span> <span class="o">|</span> <span class="n">END3</span> <span class="o">|</span>
+<span class="o">|------+------+------|</span>
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">table</span><span class="p">::</span>
+
+    +------+------+------+
+    <span class="o">|</span> TOP1 | TOP2 | TOP3 |
+    +======+======+======+
+    <span class="o">|</span> 1    | 2    | 3    |
+    +------+------+------+
+    <span class="o">|</span> AAAA | BBBB | CCCC |
+    +------+------+------+
+    <span class="o">|</span> END1 | END2 | END3 |
+    +------+------+------+
+</pre></div>
+</div>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+CAPTION: caption</span>
+<span class="c1">#+NAME: label</span>
+<span class="o">|</span> <span class="n">TOP1</span> <span class="o">|</span> <span class="n">TOP2</span> <span class="o">|</span> <span class="n">TOP3</span> <span class="o">|</span>
+<span class="o">|------+------+------|</span>
+<span class="o">|</span> <span class="mi">1</span>    <span class="o">|</span> <span class="mi">2</span>    <span class="o">|</span> <span class="mi">3</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="n">AAAA</span> <span class="o">|</span> <span class="n">BBBB</span> <span class="o">|</span> <span class="n">CCCC</span> <span class="o">|</span>
+<span class="o">|</span> <span class="n">END1</span> <span class="o">|</span> <span class="n">END2</span> <span class="o">|</span> <span class="n">END3</span> <span class="o">|</span>
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">table</span><span class="p">::</span> caption
+    <span class="nc">:name:</span> label
+
+    +------+------+------+
+    <span class="o">|</span> TOP1 | TOP2 | TOP3 |
+    +======+======+======+
+    <span class="o">|</span> 1    | 2    | 3    |
+    +------+------+------+
+    <span class="o">|</span> AAAA | BBBB | CCCC |
+    +------+------+------+
+    <span class="o">|</span> END1 | END2 | END3 |
+    +------+------+------+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="hyperlinks">
+<h2>Hyperlinks<a class="headerlink" href="#hyperlinks" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="external-hyperlinks">
+<h3>External hyperlinks<a class="headerlink" href="#external-hyperlinks" title="Permalink to this headline">¶</a></h3>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">orgmode</span><span class="o">.</span><span class="n">org</span><span class="p">][</span><span class="n">Org</span> <span class="n">Mode</span><span class="p">]]</span>
+
+<span class="p">[[</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">orgmode</span><span class="o">.</span><span class="n">org</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="s">`Org Mode </span><span class="si">&lt;http://orgmode.org/&gt;</span><span class="s">`_</span>
+
+<span class="s">`http://orgmode.org`_</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="internal-links">
+<h3>Internal links<a class="headerlink" href="#internal-links" title="Permalink to this headline">¶</a></h3>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">an</span> <span class="o">&lt;&lt;</span><span class="n">example</span><span class="o">&gt;&gt;</span> <span class="n">cross</span> <span class="n">reference</span> <span class="n">target</span><span class="o">.</span>
+
+<span class="n">Internal</span> <span class="n">cross</span> <span class="n">references</span><span class="p">,</span> <span class="n">like</span> <span class="p">[[</span><span class="n">example</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>This is an  _<span class="nv">`example`</span>  cross reference target.
+
+Internal cross references, like <span class="s">`example`_</span>
+</pre></div>
+</div>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">headline</span>
+
+<span class="n">Internal</span> <span class="n">cross</span> <span class="n">references</span><span class="p">,</span> <span class="p">[[</span><span class="o">*</span><span class="n">headline</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">headline</span>
+<span class="gh">--------</span>
+
+Internal cross references, <span class="s">`headline`_</span>
+</pre></div>
+</div>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">headline</span>
+  <span class="p">:</span><span class="n">PROPERTIES</span><span class="p">:</span>
+  <span class="p">:</span><span class="n">CUSTOM_ID</span><span class="p">:</span> <span class="n">customid</span>
+  <span class="p">:</span><span class="n">END</span><span class="p">:</span>
+
+<span class="n">Internal</span> <span class="n">cross</span> <span class="n">references</span><span class="p">,</span> <span class="n">headline</span> <span class="p">[[</span><span class="c1">#customid]]</span>
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="nt">_customid:</span>
+
+<span class="gh">headline</span>
+<span class="gh">--------</span>
+
+Internal cross references, headline <span class="s">`customid`_</span>
+</pre></div>
+</div>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+NAME: sampletable</span>
+<span class="o">|</span> <span class="n">a</span> <span class="o">|</span> <span class="n">b</span> <span class="o">|</span> <span class="n">c</span> <span class="o">|</span>
+<span class="o">|</span> <span class="mi">1</span> <span class="o">|</span> <span class="mi">2</span> <span class="o">|</span> <span class="mi">3</span> <span class="o">|</span>
+
+<span class="n">Internal</span> <span class="n">cross</span> <span class="n">references</span><span class="p">,</span> <span class="n">label</span> <span class="p">[[</span><span class="n">sampletable</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">table</span><span class="p">::</span>
+  <span class="nc">:name:</span> sampletable
+
+  +---+---+---+
+  <span class="o">|</span> a | b | c |
+  +---+---+---+
+  <span class="o">|</span> 1 | 2 | 3 |
+  +---+---+---+
+
+Internal cross references, label <span class="s">`sampletable`_</span>
+</pre></div>
+</div>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+NAME: samplefigure</span>
+<span class="p">[[</span><span class="o">./</span><span class="n">image</span><span class="o">.</span><span class="n">jpg</span><span class="p">]]</span>
+
+<span class="n">Internal</span> <span class="n">cross</span> <span class="n">references</span><span class="p">,</span> <span class="n">label</span> <span class="p">[[</span><span class="n">samplefigure</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="nt">_samplefigure:</span>
+
+<span class="p">..</span> <span class="ow">image</span><span class="p">::</span> ./image.jpg
+
+Internal cross references, label <span class="s">`samplefigure`_</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="footnote">
+<h2>Footnote<a class="headerlink" href="#footnote" title="Permalink to this headline">¶</a></h2>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">footnote</span> <span class="n">sample</span>
+
+<span class="n">Org</span> <span class="n">mode</span><span class="p">[</span><span class="n">fn</span><span class="p">:</span><span class="n">org</span><span class="p">]</span> <span class="ow">is</span> <span class="k">for</span> <span class="n">keeping</span> <span class="n">notes</span><span class="p">,</span> <span class="n">maintaining</span> <span class="n">TODO</span> <span class="n">lists</span><span class="p">,</span> <span class="n">planning</span> <span class="n">projects</span><span class="p">,</span> <span class="ow">and</span> <span class="n">authoring</span> <span class="n">documents</span> <span class="k">with</span> <span class="n">a</span> <span class="n">fast</span> <span class="ow">and</span> <span class="n">effective</span> <span class="n">plain</span><span class="o">-</span><span class="n">text</span> <span class="n">system</span><span class="o">.</span>
+
+<span class="n">reStructuredText</span><span class="p">[</span><span class="n">fn</span><span class="p">:</span><span class="n">rest</span><span class="p">]</span> <span class="ow">is</span> <span class="n">plaintext</span> <span class="n">that</span> <span class="n">uses</span> <span class="n">simple</span> <span class="ow">and</span> <span class="n">intuitive</span> <span class="n">constructs</span> <span class="n">to</span> <span class="n">indicate</span> <span class="n">the</span> <span class="n">structure</span> <span class="n">of</span> <span class="n">a</span> <span class="n">document</span><span class="o">.</span>
+
+<span class="p">[</span><span class="n">fn</span><span class="p">:</span><span class="n">org</span><span class="p">]</span> <span class="n">org</span><span class="o">-</span><span class="n">mode</span> <span class="p">[[</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">orgmode</span><span class="o">.</span><span class="n">org</span><span class="p">]]</span>
+<span class="p">[</span><span class="n">fn</span><span class="p">:</span><span class="n">rest</span><span class="p">]</span> <span class="n">reStructuredText</span> <span class="p">[[</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">docutils</span><span class="o">.</span><span class="n">sourceforge</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">ref</span><span class="o">/</span><span class="n">rst</span><span class="o">/</span><span class="n">restructuredtext</span><span class="o">.</span><span class="n">html</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">footnote sample</span>
+<span class="gh">---------------</span>
+
+Org mode <span class="s">[2]_</span>  is for keeping notes, maintaining TODO lists, planning projects, and authoring documents with a fast and effective plain-text system.
+
+reStructuredText <span class="s">[1]_</span>  is plaintext that uses simple and intuitive constructs to indicate the structure of a document.
+
+
+<span class="p">..</span> <span class="nt">[1]</span> reStructuredText <span class="s">`http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html </span><span class="si">&lt;http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html&gt;</span><span class="s">`_</span>
+
+<span class="p">..</span> <span class="nt">[2]</span> org-mode <span class="s">`http://orgmode.org </span><span class="si">&lt;http://orgmode.org&gt;</span><span class="s">`_</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="export-restructuredtext-fragments">
+<h2>Export reStructuredText fragments<a class="headerlink" href="#export-restructuredtext-fragments" title="Permalink to this headline">¶</a></h2>
+<p>Org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>See also @@rst::meth:`mypackage.mymodule.MyClass.mymethod()`@@.
+
+#+RST: .. class:: alert
+
+#+BEGIN_EXPORT rst
+.. class:: alert
+#+END_EXPORT
+</pre></div>
+</div>
+<p>reStructuredText:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>See also <span class="na">:meth:</span><span class="nv">`mypackage.mymodule.MyClass.mymethod()`</span>.
+
+<span class="p">..</span> <span class="ow">class</span><span class="p">::</span> alert
+
+<span class="p">..</span> <span class="ow">class</span><span class="p">::</span> alert
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="notebooks.html" title="previous page">Content with notebooks</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Rahul Saraf<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>
