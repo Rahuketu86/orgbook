@@ -1,8 +1,12 @@
+#Introduction
+
 This is a template repository for automating book creation 
 
+#Idea
 Idea is simple 
 
 1. Using this repo as a template will setup all the things in your repository
     - Automate book build using github actions 
     - Deploy book to netlify 
     - Build org files alongwith md/notebook or rst
+
