@@ -29,6 +29,13 @@ jobs:
       run: |
         pip install -r book/requirements.txt
 
+    # Convert org files to rst
+    - name: convert org files
+      uses: docker://rahuketu86/fastpages-emacs
+      if: github.event.deleted == false
+      with:
+        args: ./_custom_action_files/custom.sh
+
     # Build the book
     - name: Build the book
       run: |
