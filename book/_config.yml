@@ -1,8 +1,25 @@
 # Book settings
-title: My sample book
-author: The Jupyter Book Community
+title: Org book 
+author: Rahul Saraf
 logo: logo.png
 
 latex:
   latex_documents:
     targetname: book.tex
+    
+    
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/rahuketu86/orgbook
+  path_to_book: book
+
+html:
+  use_repository_button: true
+# Configure your Binder links, such as the URL of the BinderHub.
+
+launch_buttons:
+  notebook_interface        : classic  # The interface interactive links will activate ["classic", "jupyterlab"]
+  binderhub_url             : https://mybinder.org  # The URL of the BinderHub (e.g., https://mybinder.org)
+  jupyterhub_url            : ""  # The URL of the JupyterHub (e.g., https://datahub.berkeley.edu)
+  thebe                     : false  # Add a thebe button to pages (requires the repository to run on Binder)
+  colab_url                 : https://colab.research.google.com 
