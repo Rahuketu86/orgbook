@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 <html>
@@ -7,17 +6,37 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ox-Rst &#8212; Org book</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -25,8 +44,8 @@
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -40,8 +59,8 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Content with notebooks" href="notebooks.html" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
 
 
 
@@ -97,16 +116,6 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Ox-Rst
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="#configuration">
-     Configuration
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="#restructuredtext-export">
-     reStructuredText export
     </a>
    </li>
   </ul>
@@ -180,7 +189,8 @@
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
@@ -189,12 +199,221 @@
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
+        
         <div class="tocsection onthispage pt-5 pb-3">
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configuration">
+   Configuration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#restructuredtext-export">
+   reStructuredText export
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#restructuredtext-commands">
+     reStructuredText commands
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#c-c-c-e-r-r-org-rst-export-to-rst">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         C-c
+        </span>
+        <span class="pre">
+         C-e
+        </span>
+        <span class="pre">
+         r
+        </span>
+        <span class="pre">
+         r
+        </span>
+        <span class="pre">
+         (org-rst-export-to-rst)
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#c-c-c-e-r-r-org-rst-export-as-rst">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         C-c
+        </span>
+        <span class="pre">
+         C-e
+        </span>
+        <span class="pre">
+         r
+        </span>
+        <span class="pre">
+         R
+        </span>
+        <span class="pre">
+         (org-rst-export-as-rst)
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#title-author-e-mail-and-date">
+     Title, Author, E-Mail and Date
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#headings">
+   Headings
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#table-of-contents">
+     Table of contents
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lists">
+     Lists
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#special-characters">
+     Special Characters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#paragraphs">
+     Paragraphs
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#verse-block">
+       Verse block
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#quote-block">
+       Quote block
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#special-blocks">
+       Special blocks
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#center-block">
+       Center block
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#literal-examples">
+     Literal examples
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-block">
+       example block
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#src-block">
+       src block
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#emphasis-and-monospace">
+     Emphasis and monospace
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subscript-and-superscript">
+     Subscript and superscript
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#latex-fragments">
+   LaTeX fragments
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#horizontal-rules">
+     Horizontal rules
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comment-block">
+     Comment block
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#images-and-tables">
+   Images and Tables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#images">
+     Images
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tables">
+       Tables
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hyperlinks">
+     Hyperlinks
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#external-hyperlinks">
+       External hyperlinks
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#internal-links">
+       Internal links
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#footnote">
+     Footnote
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#export-restructuredtext-fragments">
+     Export reStructuredText fragments
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
         </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -206,34 +425,33 @@
 <h1>Ox-Rst<a class="headerlink" href="#ox-rst" title="Permalink to this headline">¶</a></h1>
 <p><strong>Ox-Rst</strong> exports your <a class="reference external" href="http://orgmode.org">Org</a> documents to reStructuredText.
 Ox-Rst relies on the Org-mode 9.0 export framework.</p>
-</div>
 <div class="section" id="configuration">
-<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <p>Add the following in your init.el</p>
 <div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;ox-rst</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="restructuredtext-export">
-<h1>reStructuredText export<a class="headerlink" href="#restructuredtext-export" title="Permalink to this headline">¶</a></h1>
+<h2>reStructuredText export<a class="headerlink" href="#restructuredtext-export" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">ox-rst</span></code> export back-end generates reStructuredText syntax for
 an Org mode buffer.</p>
 <div class="section" id="restructuredtext-commands">
-<h2>reStructuredText commands<a class="headerlink" href="#restructuredtext-commands" title="Permalink to this headline">¶</a></h2>
+<h3>reStructuredText commands<a class="headerlink" href="#restructuredtext-commands" title="Permalink to this headline">¶</a></h3>
 <p>To export your org document to, press <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-e</span></code>, and then <code class="docutils literal notranslate"><span class="pre">r</span></code>.</p>
 <div class="section" id="c-c-c-e-r-r-org-rst-export-to-rst">
-<h3><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-e</span> <span class="pre">r</span> <span class="pre">r</span> <span class="pre">(org-rst-export-to-rst)</span></code><a class="headerlink" href="#c-c-c-e-r-r-org-rst-export-to-rst" title="Permalink to this headline">¶</a></h3>
+<h4><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-e</span> <span class="pre">r</span> <span class="pre">r</span> <span class="pre">(org-rst-export-to-rst)</span></code><a class="headerlink" href="#c-c-c-e-r-r-org-rst-export-to-rst" title="Permalink to this headline">¶</a></h4>
 <p>Export as a text file written in reStructured syntax.
 For an Org file, <code class="docutils literal notranslate"><span class="pre">myfile.org</span></code>, the resulting file will be <code class="docutils literal notranslate"><span class="pre">myfile.rst</span></code>.
 The file will be overwritten without warning.</p>
 </div>
 <div class="section" id="c-c-c-e-r-r-org-rst-export-as-rst">
-<h3><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-e</span> <span class="pre">r</span> <span class="pre">R</span> <span class="pre">(org-rst-export-as-rst)</span></code><a class="headerlink" href="#c-c-c-e-r-r-org-rst-export-as-rst" title="Permalink to this headline">¶</a></h3>
+<h4><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-e</span> <span class="pre">r</span> <span class="pre">R</span> <span class="pre">(org-rst-export-as-rst)</span></code><a class="headerlink" href="#c-c-c-e-r-r-org-rst-export-as-rst" title="Permalink to this headline">¶</a></h4>
 <p>Export as a temporary buffer. Do not create a file.</p>
 </div>
 </div>
 <div class="section" id="title-author-e-mail-and-date">
-<h2>Title, Author, E-Mail and Date<a class="headerlink" href="#title-author-e-mail-and-date" title="Permalink to this headline">¶</a></h2>
+<h3>Title, Author, E-Mail and Date<a class="headerlink" href="#title-author-e-mail-and-date" title="Permalink to this headline">¶</a></h3>
 <p>Org:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+TITLE: This is the title of the document</span>
 <span class="c1">#+AUTHOR: Author</span>
@@ -251,6 +469,7 @@ The file will be overwritten without warning.</p>
     <span class="nc">:Contact:</span> mailaddress@example.com
     <span class="nc">:Date:</span> 2019/08/13 00:00
 </pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="headings">
@@ -286,9 +505,8 @@ contents 1-1
 contents 1-1-3
 </pre></div>
 </div>
-</div>
 <div class="section" id="table-of-contents">
-<h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
+<h3>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h3>
 <p>Org:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+OPTIONS: toc:t</span>
 </pre></div>
@@ -299,7 +517,7 @@ contents 1-1-3
 </div>
 </div>
 <div class="section" id="lists">
-<h2>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h2>
+<h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h3>
 <p>Org:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">**</span> <span class="n">Lord</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Rings</span>
 <span class="mf">1.</span> <span class="n">The</span> <span class="n">attack</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Rohirrim</span>
@@ -347,7 +565,7 @@ Sean Austin
 </div>
 </div>
 <div class="section" id="special-characters">
-<h2>Special Characters<a class="headerlink" href="#special-characters" title="Permalink to this headline">¶</a></h2>
+<h3>Special Characters<a class="headerlink" href="#special-characters" title="Permalink to this headline">¶</a></h3>
 <p>Org:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">special</span> <span class="n">characters</span> <span class="o">*</span> <span class="n">asterisk</span> \ <span class="n">backspace</span>
 <span class="o">..</span> <span class="n">reStructuredText</span> <span class="n">comment</span> <span class="n">line</span>
@@ -360,10 +578,10 @@ Sean Austin
 </div>
 </div>
 <div class="section" id="paragraphs">
-<h2>Paragraphs<a class="headerlink" href="#paragraphs" title="Permalink to this headline">¶</a></h2>
+<h3>Paragraphs<a class="headerlink" href="#paragraphs" title="Permalink to this headline">¶</a></h3>
 <p><strong>note</strong> Org line breaks <code class="docutils literal notranslate"><span class="pre">\\</span></code> will be ignored.</p>
 <div class="section" id="verse-block">
-<h3>Verse block<a class="headerlink" href="#verse-block" title="Permalink to this headline">¶</a></h3>
+<h4>Verse block<a class="headerlink" href="#verse-block" title="Permalink to this headline">¶</a></h4>
 <p>Org:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+BEGIN_VERSE</span>
  <span class="n">Great</span> <span class="n">clouds</span> <span class="n">overhead</span>
@@ -384,7 +602,7 @@ Sean Austin
 </div>
 </div>
 <div class="section" id="quote-block">
-<h3>Quote block<a class="headerlink" href="#quote-block" title="Permalink to this headline">¶</a></h3>
+<h4>Quote block<a class="headerlink" href="#quote-block" title="Permalink to this headline">¶</a></h4>
 <p>Org:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+BEGIN_QUOTE</span>
 <span class="n">Everything</span> <span class="n">should</span> <span class="n">be</span> <span class="n">made</span> <span class="k">as</span> <span class="n">simple</span> <span class="k">as</span> <span class="n">possible</span><span class="p">,</span>
@@ -453,7 +671,7 @@ but not any simpler -- Albert Einstein
 </div>
 </div>
 <div class="section" id="special-blocks">
-<h3>Special blocks<a class="headerlink" href="#special-blocks" title="Permalink to this headline">¶</a></h3>
+<h4>Special blocks<a class="headerlink" href="#special-blocks" title="Permalink to this headline">¶</a></h4>
 <p>Org:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+BEGIN_caution</span>
 <span class="n">This</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">second</span> <span class="n">line</span> <span class="n">of</span> <span class="n">the</span> <span class="n">first</span> <span class="n">paragraph</span><span class="o">.</span>
@@ -481,7 +699,7 @@ but not any simpler -- Albert Einstein
 </div>
 </div>
 <div class="section" id="center-block">
-<h3>Center block<a class="headerlink" href="#center-block" title="Permalink to this headline">¶</a></h3>
+<h4>Center block<a class="headerlink" href="#center-block" title="Permalink to this headline">¶</a></h4>
 <p>Center block will not affect.</p>
 <p>Org:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+BEGIN_CENTER</span>
@@ -496,9 +714,9 @@ but not any simpler -- Albert Einstein
 </div>
 </div>
 <div class="section" id="literal-examples">
-<h2>Literal examples<a class="headerlink" href="#literal-examples" title="Permalink to this headline">¶</a></h2>
+<h3>Literal examples<a class="headerlink" href="#literal-examples" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="example-block">
-<h3>example block<a class="headerlink" href="#example-block" title="Permalink to this headline">¶</a></h3>
+<h4>example block<a class="headerlink" href="#example-block" title="Permalink to this headline">¶</a></h4>
 <p>Org:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+NAME: label</span>
 <span class="c1">#+BEGIN_EXAMPLE</span>
@@ -515,7 +733,7 @@ but not any simpler -- Albert Einstein
 </div>
 </div>
 <div class="section" id="src-block">
-<h3>src block<a class="headerlink" href="#src-block" title="Permalink to this headline">¶</a></h3>
+<h4>src block<a class="headerlink" href="#src-block" title="Permalink to this headline">¶</a></h4>
 <p>Org:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+BEGIN_SRC lisp</span>
 <span class="p">(</span><span class="n">require</span> <span class="s1">&#39;ox-rst)</span>
@@ -531,7 +749,7 @@ but not any simpler -- Albert Einstein
 </div>
 </div>
 <div class="section" id="emphasis-and-monospace">
-<h2>Emphasis and monospace<a class="headerlink" href="#emphasis-and-monospace" title="Permalink to this headline">¶</a></h2>
+<h3>Emphasis and monospace<a class="headerlink" href="#emphasis-and-monospace" title="Permalink to this headline">¶</a></h3>
 <p>Org:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span><span class="n">bold</span><span class="o">*</span> <span class="o">/</span><span class="n">italic</span><span class="o">/</span> <span class="n">_underlined_</span> <span class="o">=</span><span class="n">verbatim</span><span class="o">=</span> <span class="o">~</span><span class="n">code</span><span class="o">~</span> <span class="o">+</span><span class="n">strike</span><span class="o">-</span><span class="n">through</span><span class="o">+</span>
 </pre></div>
@@ -542,7 +760,7 @@ but not any simpler -- Albert Einstein
 </div>
 </div>
 <div class="section" id="subscript-and-superscript">
-<h2>Subscript and superscript<a class="headerlink" href="#subscript-and-superscript" title="Permalink to this headline">¶</a></h2>
+<h3>Subscript and superscript<a class="headerlink" href="#subscript-and-superscript" title="Permalink to this headline">¶</a></h3>
 <p>Org:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">H_</span><span class="p">{</span><span class="mi">2</span><span class="p">}</span><span class="n">O</span>
 <span class="n">E</span> <span class="o">=</span> <span class="n">mc</span><span class="o">^</span><span class="mi">2</span>
@@ -552,6 +770,7 @@ but not any simpler -- Albert Einstein
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>H\ <span class="na">:sub:</span><span class="nv">`2`</span>\ O
 E = mc\ <span class="na">:sup:</span><span class="nv">`2`</span>\
 </pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="latex-fragments">
@@ -578,9 +797,8 @@ either
 .
 </pre></div>
 </div>
-</div>
 <div class="section" id="horizontal-rules">
-<h2>Horizontal rules<a class="headerlink" href="#horizontal-rules" title="Permalink to this headline">¶</a></h2>
+<h3>Horizontal rules<a class="headerlink" href="#horizontal-rules" title="Permalink to this headline">¶</a></h3>
 <p>Org:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-----</span>
 </pre></div>
@@ -591,13 +809,14 @@ either
 </div>
 </div>
 <div class="section" id="comment-block">
-<h2>Comment block<a class="headerlink" href="#comment-block" title="Permalink to this headline">¶</a></h2>
+<h3>Comment block<a class="headerlink" href="#comment-block" title="Permalink to this headline">¶</a></h3>
 <p>Comment block will disapper.</p>
 <p>Org:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+BEGIN_COMMENT</span>
 <span class="n">comment</span>
 <span class="c1">#+END_COMMENT</span>
 </pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="images-and-tables">
@@ -630,9 +849,8 @@ either
     image caption
 </pre></div>
 </div>
-</div>
 <div class="section" id="tables">
-<h3>Tables<a class="headerlink" href="#tables" title="Permalink to this headline">¶</a></h3>
+<h4>Tables<a class="headerlink" href="#tables" title="Permalink to this headline">¶</a></h4>
 <p>Org:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span> <span class="n">TOP1</span> <span class="o">|</span> <span class="n">TOP2</span> <span class="o">|</span> <span class="n">TOP3</span> <span class="o">|</span>
 <span class="o">|</span> <span class="mi">1</span>    <span class="o">|</span> <span class="mi">2</span>    <span class="o">|</span> <span class="mi">3</span>    <span class="o">|</span>
@@ -730,9 +948,9 @@ either
 </div>
 </div>
 <div class="section" id="hyperlinks">
-<h2>Hyperlinks<a class="headerlink" href="#hyperlinks" title="Permalink to this headline">¶</a></h2>
+<h3>Hyperlinks<a class="headerlink" href="#hyperlinks" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="external-hyperlinks">
-<h3>External hyperlinks<a class="headerlink" href="#external-hyperlinks" title="Permalink to this headline">¶</a></h3>
+<h4>External hyperlinks<a class="headerlink" href="#external-hyperlinks" title="Permalink to this headline">¶</a></h4>
 <p>Org:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">orgmode</span><span class="o">.</span><span class="n">org</span><span class="p">][</span><span class="n">Org</span> <span class="n">Mode</span><span class="p">]]</span>
 
@@ -747,7 +965,7 @@ either
 </div>
 </div>
 <div class="section" id="internal-links">
-<h3>Internal links<a class="headerlink" href="#internal-links" title="Permalink to this headline">¶</a></h3>
+<h4>Internal links<a class="headerlink" href="#internal-links" title="Permalink to this headline">¶</a></h4>
 <p>Org:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">an</span> <span class="o">&lt;&lt;</span><span class="n">example</span><span class="o">&gt;&gt;</span> <span class="n">cross</span> <span class="n">reference</span> <span class="n">target</span><span class="o">.</span>
 
@@ -830,7 +1048,7 @@ Internal cross references, label <span class="s">`samplefigure`_</span>
 </div>
 </div>
 <div class="section" id="footnote">
-<h2>Footnote<a class="headerlink" href="#footnote" title="Permalink to this headline">¶</a></h2>
+<h3>Footnote<a class="headerlink" href="#footnote" title="Permalink to this headline">¶</a></h3>
 <p>Org:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">footnote</span> <span class="n">sample</span>
 
@@ -858,7 +1076,7 @@ reStructuredText <span class="s">[1]_</span>  is plaintext that uses simple and 
 </div>
 </div>
 <div class="section" id="export-restructuredtext-fragments">
-<h2>Export reStructuredText fragments<a class="headerlink" href="#export-restructuredtext-fragments" title="Permalink to this headline">¶</a></h2>
+<h3>Export reStructuredText fragments<a class="headerlink" href="#export-restructuredtext-fragments" title="Permalink to this headline">¶</a></h3>
 <p>Org:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>See also @@rst::meth:`mypackage.mymodule.MyClass.mymethod()`@@.
 
@@ -876,6 +1094,7 @@ reStructuredText <span class="s">[1]_</span>  is plaintext that uses simple and 
 
 <span class="p">..</span> <span class="ow">class</span><span class="p">::</span> alert
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -927,7 +1146,10 @@ reStructuredText <span class="s">[1]_</span>  is plaintext that uses simple and 
       </div>
     </div>
 
-    <script src="_static/js/index.js"></script>
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
     
   </body>
 </html>
