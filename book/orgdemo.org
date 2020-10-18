@@ -14,7 +14,7 @@
   *Ox-Rst* exports your [[http://orgmode.org][Org]] documents to reStructuredText.
   Ox-Rst relies on the Org-mode 9.0 export framework.
 
-* Configuration
+** Configuration
 
   Add the following in your init.el
 
@@ -22,26 +22,26 @@
   (require 'ox-rst)
 #+END_SRC
 
-* reStructuredText export
+** reStructuredText export
 
   =ox-rst= export back-end generates reStructuredText syntax for
   an Org mode buffer.
 
-** reStructuredText commands
+*** reStructuredText commands
 
   To export your org document to, press =C-c C-e=, and then =r=.
 
-*** =C-c C-e r r (org-rst-export-to-rst)=
+**** =C-c C-e r r (org-rst-export-to-rst)=
 
     Export as a text file written in reStructured syntax.
     For an Org file, =myfile.org=, the resulting file will be =myfile.rst=.
     The file will be overwritten without warning.
 
-*** =C-c C-e r R (org-rst-export-as-rst)=
+**** =C-c C-e r R (org-rst-export-as-rst)=
 
     Export as a temporary buffer. Do not create a file.
 
-** Title, Author, E-Mail and Date
+*** Title, Author, E-Mail and Date
 
    Org:
 #+BEGIN_EXAMPLE
@@ -98,7 +98,7 @@
   contents 1-1-3
 #+END_SRC
 
-** Table of contents
+*** Table of contents
 
    Org:
 #+BEGIN_EXAMPLE
@@ -111,7 +111,7 @@
 
 #+END_SRC
 
-** Lists
+*** Lists
 
    Org:
 #+BEGIN_EXAMPLE
@@ -160,7 +160,7 @@
       him very well from his role as Mikey Walsh in The Goonies.
 #+END_SRC
 
-** Special Characters
+*** Special Characters
 
    Org:
 #+BEGIN_EXAMPLE
@@ -174,11 +174,11 @@
   \.. reStructuredText comment line
 #+END_SRC
 
-** Paragraphs
+*** Paragraphs
 
    *note* Org line breaks =\\= will be ignored.
 
-*** Verse block
+**** Verse block
 
     Org:
 #+BEGIN_EXAMPLE
@@ -200,7 +200,7 @@
   |          -- AlexSchroeder
 #+END_SRC
 
-*** Quote block
+**** Quote block
 
     Org:
 #+BEGIN_EXAMPLE
@@ -276,7 +276,7 @@
       but not any simpler -- Albert Einstein
 #+END_SRC
 
-*** Special blocks
+**** Special blocks
 
     Org:
 #+BEGIN_EXAMPLE
@@ -307,7 +307,7 @@
       This is the second line of the first paragraph.
 #+END_SRC
 
-*** Center block
+**** Center block
 
     Center block will not affect.
 
@@ -323,9 +323,9 @@
   center block
 #+END_SRC
 
-** Literal examples
+*** Literal examples
 
-*** example block
+**** example block
 
     Org:
 #+BEGIN_EXAMPLE
@@ -343,7 +343,7 @@
       example
 #+END_SRC
 
-*** src block
+**** src block
 
     Org:
 #+BEGIN_EXAMPLE
@@ -359,7 +359,7 @@
       (require 'ox-rst)
 #+END_SRC
 
-** Emphasis and monospace
+*** Emphasis and monospace
 
    Org:
 #+BEGIN_EXAMPLE
@@ -371,7 +371,7 @@
   ,**bold** *italic* underlined ``verbatim`` ``code`` strike-through
 #+END_SRC
 
-** Subscript and superscript
+*** Subscript and superscript
 
    Org:
 #+BEGIN_EXAMPLE
@@ -411,7 +411,7 @@ either
 .
 #+END_SRC
 
-** Horizontal rules
+*** Horizontal rules
 
    Org:
 #+BEGIN_EXAMPLE
@@ -423,7 +423,7 @@ either
   ------------
 #+END_SRC
 
-** Comment block
+*** Comment block
 
    Comment block will disapper.
 
@@ -468,7 +468,7 @@ either
       image caption
 #+END_SRC
 
-*** Tables
+**** Tables
 
     Org:
 #+BEGIN_EXAMPLE
@@ -572,9 +572,9 @@ either
       +------+------+------+
 #+END_SRC
 
-** Hyperlinks
+*** Hyperlinks
 
-*** External hyperlinks
+**** External hyperlinks
 
    Org:
 #+BEGIN_EXAMPLE
@@ -590,7 +590,7 @@ either
   `http://orgmode.org`_
 #+END_SRC
 
-*** Internal links
+**** Internal links
 
    Org:
 #+BEGIN_EXAMPLE
@@ -681,7 +681,7 @@ either
   Internal cross references, label `samplefigure`_
 #+END_SRC
 
-** Footnote
+*** Footnote
 
    Org:
 #+BEGIN_EXAMPLE
@@ -710,7 +710,7 @@ either
   .. [2] org-mode `http://orgmode.org <http://orgmode.org>`_
 #+END_SRC
 
-** Export reStructuredText fragments
+*** Export reStructuredText fragments
 
    Org:
 #+BEGIN_EXAMPLE
